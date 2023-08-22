@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from movie_app import  views
+from movie_app import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # режиссеров
@@ -24,9 +25,8 @@ urlpatterns = [
     path('api/v1/directors/<int:director_id>/', views.director_detail_api_view),
     # фильмов
     path('api/v1/movies/', views.movie_api_list_view),
-    path('api/v1/movies/<int:movie_id>/',views.movie_detail_api_view),
+    path('api/v1/movies/<int:movie_id>/', views.movie_detail_api_view),
     # отзывов
     path('api/v1/reviews/', views.review_api_list_view),
-    path('api/v1/reviews/<int:review_id>/',views.review_detail_api_view),
-
+    path('api/v1/reviews/<int:review_id>/', views.review_detail_api_view),
 ]
