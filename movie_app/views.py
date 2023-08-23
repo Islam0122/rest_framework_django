@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -109,7 +110,6 @@ def review_detail_api_view(request, review_id):
         review.stars = request.data.get('stars')
         review.movie_id = request.data.get('movie_id')
         return Response(data=ReviewSerializers(review).data)
-
 
 
 
