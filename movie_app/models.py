@@ -50,7 +50,7 @@ STARS_CHOICES = ((1, 1),
 
 class Review(models.Model):
     text = models.CharField(max_length=255)
-    stars = models.IntegerField(choices=(STARS_CHOICES), default=1)
+    stars = models.IntegerField(choices=(STARS_CHOICES))
 
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='reviews')
 
