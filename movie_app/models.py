@@ -27,7 +27,11 @@ class Movie(models.Model):
     def rating(self):
         count = self.reviews.all().count()
         stars = sum([i.stars for i in self.reviews.all()])
-        return stars // count
+
+        if count > 0:
+            return stars // count
+        else:
+            return 0
 
     def __str__(self):
         return self.title
